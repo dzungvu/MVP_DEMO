@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Input
+
+  Created by IVC on 3/29/19.
+  Copyright © 2019 jz. All rights reserved.
+*/
+"email_invalid"                                     = "Email is invalid, please check and try again!";
+"confirm_email_invalid"                             = "Confirm email is not match with email, please check and try again!";
+"password_invalid"                                  = "Password is invalid, please check and try again!";
+"signup_success"                                    = "Sign up success";
