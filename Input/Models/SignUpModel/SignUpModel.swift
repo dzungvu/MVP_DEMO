@@ -35,6 +35,7 @@ class SignUpModel: BaseModel, SignUpModelProtocol {
     
     func fetchSignUpRequest(email: String, password: String) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.entity.isSuccess = true
             self.notifiSignUpFinish()
         }
     }

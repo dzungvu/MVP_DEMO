@@ -45,6 +45,7 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
         tfPassword.autocorrectionType = .no
         
         tfEmail.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        tfConfirmEmail.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tfPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -74,7 +75,7 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
         var maxLength: Int = 0
         
         switch textField {
-        case tfEmail:
+        case tfEmail, tfConfirmEmail:
             textField.text = checkText.trimToAlphabetAndNumberAndSymbolOnly
             maxLength = kEmailMaxLength
         case tfPassword:
@@ -104,6 +105,16 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
     func hideIndicator() {
         indicator.isHidden = true
         indicator.stopAnimating()
+    }
+    
+    override func update() {
+        if let entity = presenter?.getEntity() {
+            if entity.isSuccess {
+                super.showAlertMessage(msg: String.localizeFrom(key: "signup_success"))
+            } else {
+                super.showAlertMessage(msg: String.localizeFrom(key: "signup_failed"))
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -11,12 +11,14 @@ import UIKit
 protocol SignUpViewPresenterProtocol: BaseViewPresenterProtocol {
     init(view: SignUpViewControllerProtocol)
     func onTapSubmit(email: String, confirmEmail: String, password: String)
+    func getEntity() -> SignUpEntity
 }
 
 class SignUpViewPresenter: BaseViewPresenter, SignUpViewPresenterProtocol {
     
     private var view: SignUpViewControllerProtocol
     private var model: SignUpModelProtocol
+    private var entity: SignUpEntity?
     
     required init(view: SignUpViewControllerProtocol) {
         self.view = view
@@ -42,7 +44,11 @@ class SignUpViewPresenter: BaseViewPresenter, SignUpViewPresenterProtocol {
     
     @objc private func signUpFinish() {
         view.hideIndicator()
-        view.showAlertMessage(msg: String.localizeFrom(key: "signup_success"))
+        view.update()
+    }
+    
+    func getEntity() -> SignUpEntity {
+        return model.entity
     }
     
     func viewWillDisAppear() {

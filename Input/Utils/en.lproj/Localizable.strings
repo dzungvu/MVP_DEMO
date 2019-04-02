@@ -9,3 +9,4 @@
 "confirm_email_invalid"                             = "Confirm email is not match with email, please check and try again!";
 "password_invalid"                                  = "Password is invalid, please check and try again!";
 "signup_success"                                    = "Sign up success";
+"signup_failed"                                     = "Sign up failed";

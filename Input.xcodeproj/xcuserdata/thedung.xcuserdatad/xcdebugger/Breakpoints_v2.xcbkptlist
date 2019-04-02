@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Input/Models/SignUpModel/SignUpModel.swift"
-            timestampString = "575940518.4461499"
+            timestampString = "575941544.272393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "fetchSignUpRequest(email:password:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,24 +25,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Input/Presenters/SignUpViewPresenter.swift"
-            timestampString = "575940518.446242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "onTapSubmit(email:confirmEmail:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Input/Models/SignUpModel/SignUpModel.swift"
-            timestampString = "575940518.446309"
+            timestampString = "575941544.272451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -58,12 +42,12 @@
                   moduleName = "Input"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/thedung/Documents/SampleGit/MVP_DEMO/Input/Models/SignUpModel/SignUpModel.swift"
-                  timestampString = "575939724.259153"
+                  timestampString = "575941654.419207"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
                   endingLineNumber = "37"
-                  offsetFromSymbolStart = "295">
+                  offsetFromSymbolStart = "383">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -73,12 +57,12 @@
                   moduleName = "Input"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/thedung/Documents/SampleGit/MVP_DEMO/Input/Models/SignUpModel/SignUpModel.swift"
-                  timestampString = "575939724.261464"
+                  timestampString = "575941654.420887"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
                   endingLineNumber = "38"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "22">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -90,12 +74,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Input/Models/SignUpModel/SignUpModel.swift"
-            timestampString = "575940518.4463691"
+            timestampString = "575941544.2724921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "notifiSignUpFinish()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Input/Extension/Extension+String.swift"
+            timestampString = "575941653.654314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "isValidatedPassword()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

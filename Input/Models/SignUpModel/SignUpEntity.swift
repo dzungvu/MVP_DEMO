@@ -9,5 +9,5 @@
 import UIKit
 
 class SignUpEntity: BaseEntity {
-
+    var isSuccess: Bool = false
 }
