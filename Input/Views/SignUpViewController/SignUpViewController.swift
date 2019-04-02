@@ -9,7 +9,8 @@
 import UIKit
 
 protocol SignUpViewControllerProtocol: BaseViewControllerProtocol {
-    
+    func showIndicator()
+    func hideIndicator()
 }
 
 
@@ -18,6 +19,7 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
     @IBOutlet weak var tfConfirmEmail: ForbiddenActionTextfield!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnSubmit: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     private var presenter: SignUpViewPresenterProtocol?
     
@@ -30,6 +32,7 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
     }
     
     private func initView() {
+        indicator.isHidden = true
         btnSubmit.isEnabled = false
         
         tfEmail.keyboardType = .emailAddress
@@ -43,6 +46,11 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
         
         tfEmail.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tfPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,6 +94,21 @@ class SignUpViewController: BaseViewController, SignUpViewControllerProtocol {
     
     private func setEnableButton() {
         btnSubmit.isEnabled = (!tfEmail.text!.isTextInputEmpty() && !tfConfirmEmail.text!.isTextInputEmpty() && !tfPassword.text!.isTextInputEmpty())
+    }
+    
+    func showIndicator() {
+        indicator.startAnimating()
+        indicator.isHidden = false
+    }
+    
+    func hideIndicator() {
+        indicator.isHidden = true
+        indicator.stopAnimating()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        presenter?.viewWillDisAppear()
+        super.viewWillDisappear(animated)
     }
 }
 

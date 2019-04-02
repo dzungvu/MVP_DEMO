@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Input" customModuleProvider="target">
             <connections>
                 <outlet property="btnSubmit" destination="xxU-RI-Vtg" id="sHs-TL-BJU"/>
+                <outlet property="indicator" destination="2Hi-TY-35N" id="Z56-WJ-X3Q"/>
                 <outlet property="tfConfirmEmail" destination="pED-Zh-RaT" id="lxS-aj-E52"/>
                 <outlet property="tfEmail" destination="gkf-BY-IAf" id="yms-NX-ZRF"/>
                 <outlet property="tfPassword" destination="W98-k0-LH7" id="nGW-oP-DSP"/>
@@ -66,6 +67,9 @@
                         <navigationItem title="Sign up" id="Grz-Tc-wQP"/>
                     </items>
                 </navigationBar>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Hi-TY-35N">
+                    <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <gestureRecognizers/>
@@ -77,9 +81,11 @@
                 <constraint firstItem="pED-Zh-RaT" firstAttribute="top" secondItem="gkf-BY-IAf" secondAttribute="bottom" constant="16" id="Sqh-qd-1st"/>
                 <constraint firstItem="KKc-gH-rsW" firstAttribute="trailing" secondItem="gkf-BY-IAf" secondAttribute="trailing" constant="16" id="Ti0-dj-k41"/>
                 <constraint firstItem="TeZ-Cd-iSA" firstAttribute="trailing" secondItem="KKc-gH-rsW" secondAttribute="trailing" id="aPv-Cr-baT"/>
+                <constraint firstItem="2Hi-TY-35N" firstAttribute="centerX" secondItem="KKc-gH-rsW" secondAttribute="centerX" id="cUB-jY-9HX"/>
                 <constraint firstItem="TeZ-Cd-iSA" firstAttribute="leading" secondItem="KKc-gH-rsW" secondAttribute="leading" id="cc4-5M-rZQ"/>
                 <constraint firstItem="gkf-BY-IAf" firstAttribute="leading" secondItem="KKc-gH-rsW" secondAttribute="leading" constant="16" id="dRg-JE-H3b"/>
                 <constraint firstItem="xxU-RI-Vtg" firstAttribute="leading" secondItem="KKc-gH-rsW" secondAttribute="leading" constant="16" id="gdp-hI-NnZ"/>
+                <constraint firstItem="2Hi-TY-35N" firstAttribute="centerY" secondItem="KKc-gH-rsW" secondAttribute="centerY" id="h1k-fP-3k3"/>
                 <constraint firstItem="W98-k0-LH7" firstAttribute="leading" secondItem="KKc-gH-rsW" secondAttribute="leading" constant="16" id="o8s-iR-dHa"/>
                 <constraint firstItem="pED-Zh-RaT" firstAttribute="leading" secondItem="KKc-gH-rsW" secondAttribute="leading" constant="16" id="oe3-sO-77t"/>
                 <constraint firstItem="W98-k0-LH7" firstAttribute="top" secondItem="pED-Zh-RaT" secondAttribute="bottom" constant="16" id="p7O-k7-Xv9"/>

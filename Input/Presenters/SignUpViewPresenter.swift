@@ -16,9 +16,15 @@ protocol SignUpViewPresenterProtocol: BaseViewPresenterProtocol {
 class SignUpViewPresenter: BaseViewPresenter, SignUpViewPresenterProtocol {
     
     private var view: SignUpViewControllerProtocol
+    private var model: SignUpModelProtocol
     
     required init(view: SignUpViewControllerProtocol) {
         self.view = view
+        model = SignUpModel.shared
+    }
+    
+    func viewWillAppear() {
+        model.addObserverSignUpRequest(self, selector: #selector(signUpFinish))
     }
     
     func onTapSubmit(email: String, confirmEmail: String, password: String) {
@@ -29,7 +35,17 @@ class SignUpViewPresenter: BaseViewPresenter, SignUpViewPresenterProtocol {
         } else if !password.isValidatedPassword() {
             view.showAlertMessage(msg: String.localizeFrom(key: "password_invalid"))
         } else {
-            view.showAlertMessage(msg: String.localizeFrom(key: "signup_success"))
+            view.showIndicator()
+            model.fetchSignUpRequest(email: email, password: password)
         }
+    }
+    
+    @objc private func signUpFinish() {
+        view.hideIndicator()
+        view.showAlertMessage(msg: String.localizeFrom(key: "signup_success"))
+    }
+    
+    func viewWillDisAppear() {
+        model.removeObserver(self)
     }
 }

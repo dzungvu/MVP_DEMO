@@ -16,15 +16,15 @@ protocol SignUpNotify: class {
 protocol SignUpModelProtocol: SignUpNotify {
     var entity: SignUpEntity { get }
     func clear()
-    func fetchSignRequest(email: String, password: String)
+    func fetchSignUpRequest(email: String, password: String)
 }
 
 class SignUpModel: BaseModel, SignUpModelProtocol {
     
     static let shared: SignUpModelProtocol = SignUpModel()
     
-    private override init() {
-        // Init
+    private override init () {
+        self.entity = SignUpEntity()
     }
     
     var entity: SignUpEntity
@@ -33,18 +33,26 @@ class SignUpModel: BaseModel, SignUpModelProtocol {
         entity = SignUpEntity()
     }
     
-    func fetchSignRequest(email: String, password: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 200) {
-            
+    func fetchSignUpRequest(email: String, password: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.notifiSignUpFinish()
         }
     }
     
     func addObserverSignUpRequest(_ observer: Any, selector: Selector) {
-        <#code#>
+        NotificationCenter.default.addObserver(observer, selector: selector, name: .signUpObserverName, object: nil)
     }
     
     func removeObserver(_ observer: Any) {
-        <#code#>
+        NotificationCenter.default.removeObserver(observer)
     }
     
+    private func notifiSignUpFinish() {
+        NotificationCenter.default.post(name: .signUpObserverName, object: nil)
+    }
+    
+}
+
+extension Notification.Name {
+    static let signUpObserverName = Notification.Name("signUpOberverName")
 }

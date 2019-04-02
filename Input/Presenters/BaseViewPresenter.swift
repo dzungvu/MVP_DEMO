@@ -10,6 +10,8 @@ import Foundation
 
 protocol BaseViewPresenterProtocol {
     // Use as super protocol of all screen use in app
+    func viewWillAppear()
+    func viewWillDisAppear()
 }
 
 class BaseViewPresenter {
